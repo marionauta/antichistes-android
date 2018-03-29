@@ -1,0 +1,24 @@
+{
+    "name": "antichistes",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "start": "node node_modules/react-native/local-cli/cli.js start",
+        "rn": "node node_modules/react-native/local-cli/cli.js",
+        "tsc": "node node_modules/typescript/bin/tsc"
+    },
+    "dependencies": {
+        "react": "16.2.0",
+        "react-native": "0.53.0",
+        "react-native-platform-touchable": "^1.1.1",
+        "react-native-vector-icons": "^4.5.0",
+        "react-navigation": "^1.5.0"
+    },
+    "devDependencies": {
+        "@types/react": "^16.1.0",
+        "@types/react-native": "^0.52.0",
+        "@types/react-native-vector-icons": "^4.4.3",
+        "@types/react-navigation": "^1.5.0",
+        "typescript": "2.7.2"
+    }
+}
