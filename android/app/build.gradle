@@ -116,6 +116,10 @@ android {
         }
     }
     buildTypes {
+        debug {
+            applicationIdSuffix ".dev"
+        }
+
         release {
             minifyEnabled enableProguardInReleaseBuilds
             shrinkResources enableProguardInReleaseBuilds
