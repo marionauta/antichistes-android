@@ -1,0 +1,14 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.antichistes">
+
+    <uses-permission
+        android:name="android.permission.SYSTEM_ALERT_WINDOW"
+        tools:node="remove" />
+
+    <application android:name=".MainApplication">
+        <activity
+            android:name="com.facebook.react.devsupport.DevSettingsActivity"
+            tools:node="remove" />
+    </application>
+</manifest>
