@@ -1,11 +1,10 @@
 {
-    "name": "antichistes",
-    "version": "0.0.1",
     "private": true,
     "scripts": {
-        "start": "node node_modules/react-native/local-cli/cli.js start",
-        "rn": "node node_modules/react-native/local-cli/cli.js",
-        "tsc": "node node_modules/typescript/bin/tsc"
+        "start": "node node_modules/.bin/react-native start",
+        "rn": "node node_modules/.bin/react-native",
+        "build": "node node_modules/.bin/tsc",
+        "postinstall": "rm ./node_modules/react-native/local-cli/core/__fixtures__/files/package.json"
     },
     "dependencies": {
         "react": "16.2.0",
