@@ -5,7 +5,5 @@ export interface AntiJoke {
 }
 
 export interface ServerResponse {
-    error: number;
-    message?: string;
-    items?: Array<AntiJoke>;
+    items: Array<AntiJoke>;
 }

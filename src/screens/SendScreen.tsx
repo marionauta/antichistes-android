@@ -17,6 +17,7 @@ import {
     styles,
     URLBASE,
 } from '../utils';
+import { isResponseOk } from '../utils/validators';
 
 interface State {
     sent: boolean;
@@ -77,8 +78,8 @@ export class SendScreen extends React.Component<{}, State> {
         };
 
         fetch(URLBASE + '/send', params)
-            .then(res => res.json())
-            .then(res => res.error === 0 ? this.onSubmitSuccess() : this.onSubmitError())
+            .then(isResponseOk)
+            .then(this.onSubmitSuccess)
             .catch(this.onSubmitError);
     }
 

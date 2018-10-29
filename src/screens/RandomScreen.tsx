@@ -18,6 +18,7 @@ import {
     styles,
     URLBASE,
 } from '../utils';
+import { isResponseOk } from '../utils/validators';
 
 enum LoadState {
     Loading,
@@ -91,7 +92,7 @@ export class RandomScreen extends React.Component<{}, State> {
         fetch(URLBASE + '/random')
             .then(res => res.json())
             .then((res: ServerResponse) => this.setState({
-                jokes: res.items!,
+                jokes: res.items,
                 loadState: LoadState.Got,
             }))
             .catch(() => this.loadNewJokes(count + 1));
@@ -111,8 +112,7 @@ export class RandomScreen extends React.Component<{}, State> {
         };
 
         fetch(URLBASE + '/vote', params)
-            .then(res => res.json())
-            .then(res => res.error !== 0 ? this.onLikeFail : null)
+            .then(isResponseOk)
             .catch(this.onLikeFail);
     }
 
