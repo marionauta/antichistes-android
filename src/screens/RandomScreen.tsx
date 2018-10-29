@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React from 'react';
+import { PureComponent } from 'react';
 import {
     ActivityIndicator,
     Text,
@@ -33,7 +34,7 @@ interface State {
     loadState: LoadState;
 }
 
-export class RandomScreen extends React.Component<{}, State> {
+export class RandomScreen extends PureComponent<{}, State> {
     static navigationOptions = {
         tabBarIcon: ({ tintColor }) => <Icon
             name='dice-5'

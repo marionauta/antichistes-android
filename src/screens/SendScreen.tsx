@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React from 'react';
+import { PureComponent } from 'react';
 import {
     ActivityIndicator,
     Alert,
@@ -25,7 +26,7 @@ interface State {
     second_part: string;
 }
 
-export class SendScreen extends React.Component<{}, State> {
+export class SendScreen extends PureComponent<{}, State> {
     static navigationOptions = {
         tabBarIcon: ({ tintColor }) => <Icon
             name='pencil'
