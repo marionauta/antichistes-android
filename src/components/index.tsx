@@ -10,19 +10,17 @@ interface ButtonProps {
     action: () => void;
 }
 
-export const Button = (props: ButtonProps) => {
-    const background = props.disabled ? '#bbb' : '#3c7';
-
-    return (
-        <Touchable
-            style={[{ backgroundColor: background }, styles.buttonContainer]}
-            disabled={props.disabled}
-            onPress={props.action}>
-
-            <Text style={styles.buttonText}>{props.text}</Text>
-        </Touchable>
-    )
-}
+export const Button = ({ text, disabled, action }: ButtonProps) =>
+    <Touchable
+        disabled={disabled}
+        onPress={action}
+        style={{
+            backgroundColor: disabled ? '#bbb' : '#3c7',
+            ...styles.buttonContainer,
+        }}
+    >
+        <Text style={styles.buttonText}>{text}</Text>
+    </Touchable>
 
 interface InputProps {
     value: string;
@@ -30,25 +28,23 @@ interface InputProps {
     onChange: (x: string) => void;
 }
 
-export const Input = (props: InputProps) => (
+export const Input = (props: InputProps) =>
     <TextInput
+        multiline
         value={props.value}
         placeholder={props.placeholder}
         onChangeText={props.onChange}
-
         style={styles.input}
-        multiline={true}
-        underlineColorAndroid='transparent' />
-);
+        underlineColorAndroid='transparent'
+    />
 
 interface JokeProps {
     joke: AntiJoke;
     shown: boolean;
 }
 
-export const Joke = (props: JokeProps) => (
+export const Joke = ({ joke, shown }: JokeProps) =>
     <View style={styles.joke}>
-        <Text style={styles.first}>{props.joke.first_part}</Text>
-        {props.shown && <Text style={styles.second}>{props.joke.second_part}</Text>}
+        <Text style={styles.first}>{joke.first_part}</Text>
+        {shown && <Text style={styles.second}>{joke.second_part}</Text>}
     </View>
-);
