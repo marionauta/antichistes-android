@@ -2,22 +2,22 @@
     "name": "AntiChistes",
     "private": true,
     "scripts": {
-        "start": "node node_modules/.bin/react-native start",
-        "rn": "node node_modules/.bin/react-native",
-        "build": "node node_modules/.bin/tsc"
+        "start": "react-native start",
+        "rn": "react-native",
+        "build": "tsc"
     },
     "dependencies": {
-        "react": "16.5.0",
-        "react-native": "0.57.0",
+        "react": "16.6.3",
+        "react-native": "0.57.8",
         "react-native-platform-touchable": "^1.1.1",
         "react-native-vector-icons": "^4.5.0",
         "react-navigation": "^1.5.0"
     },
     "devDependencies": {
-        "@types/react": "^16.1.0",
-        "@types/react-native": "^0.52.0",
+        "@types/react": "^16.7.18",
+        "@types/react-native": "^0.57.27",
         "@types/react-native-vector-icons": "^4.4.3",
         "@types/react-navigation": "^1.5.0",
-        "typescript": "2.7.2"
+        "typescript": "3.2.2"
     }
 }
